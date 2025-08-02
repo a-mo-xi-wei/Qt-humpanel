@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Fonts/iconfont.ttf</file>
+        <file>images/bg.png</file>
+        <file>images/titelbac.png</file>
+        <file>images/border.png</file>
+        <file>images/bc2.png</file>
+        <file>images/line_top.png</file>
+        <file>images/dataf.png</file>
+        <file>images/border002.png</file>
+        <file>images/err.png</file>
+        <file>images/success.png</file>
+        <file>images/unknown.png</file>
+        <file>images/war.png</file>
+        <file>images/room.png</file>
+    </qresource>
+</RCC>
