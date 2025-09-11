@@ -10,9 +10,12 @@
 
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
- class MainWindow;
+
+namespace Ui
+{
+    class MainWindow;
 }
+
 QT_END_NAMESPACE
 
 class MainWindow : public FramelessMainWindow
@@ -20,11 +23,10 @@ class MainWindow : public FramelessMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
 
 private slots:
-
     void titleDblClick();
     void windowStateChange(bool max);
 
@@ -48,10 +50,10 @@ private slots:
     void on_btn__clicked();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow* ui;
     QFont iconfont;
     RoundProgressBar* rpb[6];
-    QVector<QCPTextElement *> titel;
+    QVector<QCPTextElement*> titel;
     QVector<QCustomPlot*> lineSty;
     double x_time;
 };

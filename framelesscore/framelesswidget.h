@@ -29,29 +29,30 @@ class FramelessWidget : public QWidget
 
 {
     Q_OBJECT
+
 public:
-    explicit FramelessWidget(QWidget *parent = 0);
+    explicit FramelessWidget(QWidget* parent = 0);
 
 protected:
     //窗体显示的时候触发
-    void showEvent(QShowEvent *event);
+    void showEvent(QShowEvent* event);
 
     //事件过滤器识别拖动拉伸等
-    void doWindowStateChange(QEvent *event);
-    void doResizeEvent(QEvent *event);
-    bool eventFilter(QObject *watched, QEvent *event);
+    void doWindowStateChange(QEvent* event);
+    void doResizeEvent(QEvent* event);
+    bool eventFilter(QObject* watched, QEvent* event);
 
     //拦截系统事件用于修复系统休眠后唤醒程序的BUG
-#if (QT_VERSION >= QT_VERSION_CHECK(6,0,0))
-    bool nativeEvent(const QByteArray &eventType, void *message, qintptr *result);
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+    bool nativeEvent(const QByteArray& eventType, void* message, qintptr* result);
 #else
-    bool nativeEvent(const QByteArray &eventType, void *message, long *result);
+    bool nativeEvent(const QByteArray& eventType, void* message, long* result);
 #endif
 
     //Qt4的写法
-#if (QT_VERSION < QT_VERSION_CHECK(5,0,0))
+#if (QT_VERSION < QT_VERSION_CHECK(5, 0, 0))
 #ifdef Q_OS_WIN
-    bool winEvent(MSG *message, long *result);
+    bool winEvent(MSG* message, long* result);
 #endif
 #endif
 
@@ -62,7 +63,7 @@ private:
     bool resizeEnable;
 
     //标题栏控件
-    QWidget *titleBar;
+    QWidget* titleBar;
 
     //鼠标是否按下+按下坐标+按下时窗体区域
     bool mousePressed;
@@ -86,7 +87,7 @@ public Q_SLOTS:
     void setResizeEnable(bool resizeEnable);
 
     //设置标题栏控件
-    void setTitleBar(QWidget *titleBar);
+    void setTitleBar(QWidget* titleBar);
 
 Q_SIGNALS:
     void titleDblClick();
